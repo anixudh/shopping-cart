@@ -4,7 +4,7 @@ import { Shop } from "./components/Shop";
 import { Cart } from "./components/Cart";
 import { Nav } from "./components/Nav";
 import { ItemPage } from "./components/Items/ItemPage";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const RouteSwitch = () => {
   const [cart, setCart] = useState([]);
@@ -16,7 +16,72 @@ const RouteSwitch = () => {
     let response = await fetch(url);
     let item = await response.json();
     console.log(item);
-    setCart([...cart, item]);
+    let itemId = item.id;
+    let flag = 0;
+    for (let item of cart) {
+      if (item.itemId === itemId) {
+        item.quantity++;
+        flag = 1;
+        break;
+      }
+    }
+    if (flag === 0)
+      setCart([
+        ...cart,
+        {
+          itemId,
+          quantity: 1,
+        },
+      ]);
+
+    console.log(cart);
+  };
+
+  const removeItem = (e) => {
+    let delId = Number(e.target.parentNode.id);
+    let newCart = cart.slice(0);
+    let delIndex = -1;
+    for (let i = 0; i < newCart.length; i++) {
+      if (newCart[i].itemId === delId) {
+        delIndex = i;
+        break;
+      }
+    }
+
+    newCart = newCart.slice(0, delIndex).concat(newCart.slice(delIndex + 1));
+    setCart([...newCart]);
+  };
+
+  const increaseQty = (e) => {
+    let qtyId = Number(e.target.parentNode.id);
+    let newCart = cart.slice(0);
+    let qtyIndex = -1;
+    for (let i = 0; i < newCart.length; i++) {
+      console.log(newCart[i].itemId, qtyId);
+      if (newCart[i].itemId === qtyId) {
+        qtyIndex = i;
+        break;
+      }
+    }
+
+    newCart[qtyIndex].quantity++;
+    setCart([...newCart]);
+  };
+
+  const decreaseQty = (e) => {
+    let qtyId = Number(e.target.parentNode.id);
+    let newCart = cart.slice(0);
+    let qtyIndex = -1;
+    for (let i = 0; i < newCart.length; i++) {
+      console.log(newCart[i].itemId, qtyId);
+      if (newCart[i].itemId === qtyId) {
+        qtyIndex = i;
+        break;
+      }
+    }
+    if (newCart[qtyIndex].quantity === 1) return;
+    newCart[qtyIndex].quantity--;
+    setCart([...newCart]);
   };
   return (
     <BrowserRouter>
@@ -24,7 +89,17 @@ const RouteSwitch = () => {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/cart" element={<Cart cart={cart} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              removeItem={removeItem}
+              increaseQty={increaseQty}
+              decreaseQty={decreaseQty}
+            />
+          }
+        />
         <Route path="/shop/:id" element={<ItemPage addToCart={addToCart} />} />
       </Routes>
     </BrowserRouter>

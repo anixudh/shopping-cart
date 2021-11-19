@@ -55,10 +55,6 @@ export const Shop = () => {
     return items;
   };
 
-  /* const handleItemClick = (e) => {
-    console.log(e.target.parentNode.id);
-  }; */
-
   return (
     <div className="shop">
       <h1>This is shop</h1>
