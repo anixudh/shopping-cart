@@ -3,6 +3,7 @@ import App from "./App";
 import { Shop } from "./components/Shop";
 import { Cart } from "./components/Cart";
 import { Nav } from "./components/Nav";
+import { ItemPage } from "./components/Items/ItemPage";
 import React from "react";
 
 const RouteSwitch = () => {
@@ -13,6 +14,7 @@ const RouteSwitch = () => {
         <Route path="/" element={<App />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/shop/:id" element={<ItemPage />} />
       </Routes>
     </BrowserRouter>
   );
