@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "../../styles/ItemPage.css";
-export const ItemPage = () => {
+
+export const ItemPage = ({ addToCart }) => {
   const [item, setItem] = useState({});
   const { id } = useParams();
   useEffect(() => {
@@ -24,9 +25,12 @@ export const ItemPage = () => {
       {Object.keys(item).length === 0 ? (
         <div>Loading...</div>
       ) : (
-        <div className="item-details">
+        <div className="item-details" id={id}>
           <img className="item-page-image" src={item.image} alt="item-page" />
           <div className="item-page-name">{item.title}</div>
+          <button className="add-to-cart-button" onClick={addToCart}>
+            Add to cart
+          </button>
         </div>
       )}
     </div>
