@@ -1,36 +1,36 @@
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 import "../styles/Cart.css";
 
 export const Cart = ({ cartProp, removeItem, increaseQty, decreaseQty }) => {
   const [cart, setCart] = useState([...cartProp]);
 
-  const fetchDetails = async () => {
-    let cart = [];
-    for (let i = 0; i < cartProp.length; i++) {
-      let url = "https://fakestoreapi.com/products/" + cartProp[i].itemId;
-      let response = await fetch(url);
-      let item = await response.json();
-      let id = item.id;
-      let img = item.image;
-      let title = item.title;
-      let price = item.price;
-      let quantity = cartProp[i].quantity;
-      console.log(id, img, title);
-      cart.push({
-        id,
-        img,
-        title,
-        quantity,
-        price,
-      });
-    }
-    return cart;
-  };
-
   useEffect(() => {
     const loadItems = async () => {
       setCart(await fetchDetails());
+    };
+
+    const fetchDetails = async () => {
+      let cart = [];
+      for (let i = 0; i < cartProp.length; i++) {
+        let url = "https://fakestoreapi.com/products/" + cartProp[i].itemId;
+        let response = await fetch(url);
+        let item = await response.json();
+        let id = item.id;
+        let img = item.image;
+        let title = item.title;
+        let price = item.price;
+        let quantity = cartProp[i].quantity;
+        console.log(id, img, title);
+        cart.push({
+          id,
+          img,
+          title,
+          quantity,
+          price,
+        });
+      }
+      return cart;
     };
 
     loadItems();
