@@ -4,6 +4,7 @@ import { Shop } from "./components/Shop";
 import { Cart } from "./components/Cart";
 import { Nav } from "./components/Nav";
 import { ItemPage } from "./components/Items/ItemPage";
+import { Footer } from "./components/Footer";
 import React, { useState } from "react";
 
 const RouteSwitch = () => {
@@ -11,7 +12,7 @@ const RouteSwitch = () => {
 
   const addToCart = async (e) => {
     console.log(e.target.parentNode.id);
-    let id = e.target.parentNode.id;
+    let id = e.target.parentNode.parentNode.id;
     let url = "https://fakestoreapi.com/products/" + id;
     let response = await fetch(url);
     let item = await response.json();
@@ -38,7 +39,7 @@ const RouteSwitch = () => {
   };
 
   const removeItem = (e) => {
-    let delId = Number(e.target.parentNode.id);
+    let delId = Number(e.target.parentNode.parentNode.id);
     let newCart = cart.slice(0);
     let delIndex = -1;
     for (let i = 0; i < newCart.length; i++) {
@@ -53,7 +54,7 @@ const RouteSwitch = () => {
   };
 
   const increaseQty = (e) => {
-    let qtyId = Number(e.target.parentNode.id);
+    let qtyId = Number(e.target.parentNode.parentNode.id);
     let newCart = cart.slice(0);
     let qtyIndex = -1;
     for (let i = 0; i < newCart.length; i++) {
@@ -69,7 +70,7 @@ const RouteSwitch = () => {
   };
 
   const decreaseQty = (e) => {
-    let qtyId = Number(e.target.parentNode.id);
+    let qtyId = Number(e.target.parentNode.parentNode.id);
     let newCart = cart.slice(0);
     let qtyIndex = -1;
     for (let i = 0; i < newCart.length; i++) {
@@ -93,7 +94,7 @@ const RouteSwitch = () => {
           path="/cart"
           element={
             <Cart
-              cart={cart}
+              cartProp={cart}
               removeItem={removeItem}
               increaseQty={increaseQty}
               decreaseQty={decreaseQty}
@@ -102,6 +103,7 @@ const RouteSwitch = () => {
         />
         <Route path="/shop/:id" element={<ItemPage addToCart={addToCart} />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

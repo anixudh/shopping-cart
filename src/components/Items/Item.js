@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 export const Item = ({ item }) => {
   //console.log(item.item.image);
   return (
-    <Link to={`/shop/${item.id}`}>
-      <div className="item" id={item.id}>
+    <div className="item" id={item.id}>
+      <Link to={`/shop/${item.id}`}>
         <img src={item.image} className="item-image" alt="item" />
-      </div>
-    </Link>
+        <hr />
+        {
+          //<div className="item-name">{item.title}</div><hr />
+        }
+        <div className="item-price">${item.price}</div>
+      </Link>
+    </div>
   );
 };

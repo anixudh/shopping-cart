@@ -1,3 +1,43 @@
+.item-page {
+  height: 92%;
+  background: url("../assets/images/item-page-background.jpg");
+  margin-top: -20px;
+}
 .item-page-image {
   width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+.item-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.item-page-right {
+  border: 1px solid black;
+  width: 400px;
+
+  text-align: center;
+}
+.item-page-left {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+.item-page-name {
+  font-weight: bolder;
+  font-size: 36px;
+  width: 400px;
+}
+.item-page-price {
+  font-weight: bold;
+  font-size: 20px;
+}
+.add-to-cart-button {
+  width: 100%;
+  color: white;
+  background-color: black;
+  font-size: 24px;
+  cursor: pointer;
 }

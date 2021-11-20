@@ -26,11 +26,22 @@ export const ItemPage = ({ addToCart }) => {
         <div>Loading...</div>
       ) : (
         <div className="item-details" id={id}>
-          <img className="item-page-image" src={item.image} alt="item-page" />
-          <div className="item-page-name">{item.title}</div>
-          <button className="add-to-cart-button" onClick={addToCart}>
-            Add to cart
-          </button>
+          <div className="item-page-left">
+            <img className="item-page-image" src={item.image} alt="item-page" />
+            <div className="item-page-name">{item.title}</div>
+          </div>
+          <div className="item-page-right">
+            <div className="item-page-category">Category: {item.category}</div>{" "}
+            <hr />
+            <div className="item-page-description">
+              Description: {item.description}
+              <hr />
+            </div>
+            <div className="item-page-price">Price: ${item.price}</div>
+            <div className="add-to-cart-button" onClick={addToCart}>
+              Add to cart
+            </div>
+          </div>
         </div>
       )}
     </div>

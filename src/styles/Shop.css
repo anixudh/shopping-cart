@@ -1,0 +1,52 @@
+.shop {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background: url("../assets/images/items-background.jpg");
+  background-size: 100%;
+  background-repeat: round;
+  justify-content: center;
+}
+
+.item {
+  width: 200px;
+  height: 330px;
+  border: 2px solid black;
+  margin: 50px;
+  background-color: white;
+  box-shadow: 2px 3px 5px 2px;
+  transition: transform 0.2s;
+}
+
+@media all and (min-width: 650px) {
+  .item:hover {
+    transform: scale(1.25);
+  }
+}
+.shop a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: inherit;
+  height: inherit;
+}
+.item-name {
+  color: black;
+  text-align: center;
+  font-size: 12px;
+}
+.item-price {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+hr {
+  color: black;
+  width: inherit;
+}
+
+.item-image {
+  height: 180px;
+  width: 150px;
+}

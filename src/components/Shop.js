@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Item } from "./Items/Item";
+import "../styles/Shop.css";
 
 export const Shop = () => {
   const [items, setItems] = useState([]);
@@ -57,7 +58,6 @@ export const Shop = () => {
 
   return (
     <div className="shop">
-      <h1>This is shop</h1>
       {items.length === 0 ? (
         <div>Loading...</div>
       ) : (
