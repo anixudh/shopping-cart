@@ -5,12 +5,13 @@
   justify-content: space-evenly;
   align-items: center;
   background: url("../assets/images/cart-background.jpg");
-  height: 92%;
+  min-height: 89%;
 }
 .cart-item-img {
   width: 100px;
   height: 150px;
   margin: 10px;
+  border: 1px solid black;
 }
 .cart-item-details {
   display: flex;
@@ -24,6 +25,7 @@
   justify-content: space-evenly;
   align-items: center;
   border: 1px solid black;
+  width: 800px;
 }
 .cart-buttons {
   display: flex;

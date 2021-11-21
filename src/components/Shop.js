@@ -16,9 +16,15 @@ export const Shop = () => {
   const fetchItems = async () => {
     let items = [];
     for (let i = 1; i <= 8; i++) {
-      let url = "https://fakestoreapi.com/products/" + i;
-      let response = await fetch(url);
+      let response = await fetch("./products/" + i + ".json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+
       let item = await response.json();
+      console.log(item);
       let id = item.id;
       let title = item.title;
       let description = item.description;
@@ -35,9 +41,14 @@ export const Shop = () => {
       });
     }
     for (let i = 15; i <= 20; i++) {
-      let url = "https://fakestoreapi.com/products/" + i;
-      let response = await fetch(url);
+      let response = await fetch("./products/" + i + ".json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
       let item = await response.json();
+      console.log(item);
       let id = item.id;
       let title = item.title;
       let description = item.description;

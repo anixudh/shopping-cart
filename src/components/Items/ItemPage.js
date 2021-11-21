@@ -7,8 +7,14 @@ export const ItemPage = ({ addToCart }) => {
   const { id } = useParams();
   useEffect(() => {
     const fetchItem = async () => {
-      let url = "https://fakestoreapi.com/products/" + id;
-      let response = await fetch(url);
+      console.log(id);
+      let url = "../products/" + id + ".json";
+      let response = await fetch(url, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
       let item = await response.json();
 
       setItem(item);

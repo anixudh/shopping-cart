@@ -13,8 +13,13 @@ export const Cart = ({ cartProp, removeItem, increaseQty, decreaseQty }) => {
     const fetchDetails = async () => {
       let cart = [];
       for (let i = 0; i < cartProp.length; i++) {
-        let url = "https://fakestoreapi.com/products/" + cartProp[i].itemId;
-        let response = await fetch(url);
+        let url = "../products/" + cartProp[i].itemId + ".json";
+        let response = await fetch(url, {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        });
         let item = await response.json();
         let id = item.id;
         let img = item.image;

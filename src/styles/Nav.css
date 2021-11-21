@@ -21,3 +21,14 @@ a {
   background-color: rgb(44, 43, 43);
   color: white;
 }
+.nav-cart {
+  display: flex;
+  justify-content: space-evenly;
+}
+.cart-length {
+  background-color: orange;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: black;
+}

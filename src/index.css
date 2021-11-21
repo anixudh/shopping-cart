@@ -24,7 +24,8 @@ code {
   background: url("./assets/images/home-background.jpg");
   background-repeat: no-repeat;
   background-size: 1366px 620px;
-  height: 92.5%;
+  position: relative;
+  height: 89%;
 }
 .home-shop-name {
   font-size: 120px;
@@ -53,5 +54,5 @@ a.footer {
   width: 100%;
   position: absolute;
   left: 0;
-  background-color: rgb(175, 174, 174);
+  background-color: rgb(219, 219, 219);
 }
