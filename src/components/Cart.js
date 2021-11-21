@@ -26,7 +26,7 @@ export const Cart = ({ cartProp, removeItem, increaseQty, decreaseQty }) => {
         let title = item.title;
         let price = item.price;
         let quantity = cartProp[i].quantity;
-        console.log(id, img, title);
+        //console.log(id, img, title);
         cart.push({
           id,
           img,

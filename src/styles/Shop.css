@@ -5,6 +5,8 @@
   background-size: 100%;
   background-repeat: round;
   justify-content: center;
+  position: relative;
+  top: 50px;
 }
 
 .item {
@@ -49,4 +51,25 @@ hr {
 .item-image {
   height: 180px;
   width: 150px;
+}
+
+@media only screen and (max-width: 650px) {
+  .shop {
+    grid-template-columns: auto auto;
+  }
+
+  .item {
+    width: 150px;
+    height: 250px;
+
+    margin: 20px;
+  }
+
+  .item-image {
+    height: 80px;
+    width: 50px;
+  }
+  .item-price {
+    font-size: 18px;
+  }
 }

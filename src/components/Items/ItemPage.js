@@ -7,7 +7,7 @@ export const ItemPage = ({ addToCart }) => {
   const { id } = useParams();
   useEffect(() => {
     const fetchItem = async () => {
-      console.log(id);
+      //console.log(id);
       let url = "../products/" + id + ".json";
       let response = await fetch(url, {
         headers: {

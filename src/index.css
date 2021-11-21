@@ -25,7 +25,8 @@ code {
   background-repeat: no-repeat;
   background-size: 1366px 620px;
   position: relative;
-  height: 89%;
+  height: 92.5%;
+  top: 50px;
 }
 .home-shop-name {
   font-size: 120px;
@@ -52,7 +53,19 @@ a.footer {
   color: black;
   text-align: center;
   width: 100%;
-  position: absolute;
-  left: 0;
+  position: relative;
+  top: -20px;
   background-color: rgb(219, 219, 219);
+  z-index: 2;
+}
+
+@media only screen and (max-width: 650px) {
+  .App {
+    background-size: 1366px 900px;
+    height: 100%;
+  }
+
+  /*a.footer {
+    bottom: -50px;
+  }*/
 }

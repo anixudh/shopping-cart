@@ -24,7 +24,7 @@ export const Shop = () => {
       });
 
       let item = await response.json();
-      console.log(item);
+      //console.log(item);
       let id = item.id;
       let title = item.title;
       let description = item.description;
@@ -48,7 +48,7 @@ export const Shop = () => {
         },
       });
       let item = await response.json();
-      console.log(item);
+      //console.log(item);
       let id = item.id;
       let title = item.title;
       let description = item.description;
