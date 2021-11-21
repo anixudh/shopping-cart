@@ -13,7 +13,7 @@ export const Cart = ({ cartProp, removeItem, increaseQty, decreaseQty }) => {
     const fetchDetails = async () => {
       let cart = [];
       for (let i = 0; i < cartProp.length; i++) {
-        let url = "../products/" + cartProp[i].itemId + ".json";
+        let url = "./products/" + cartProp[i].itemId + ".json";
         let response = await fetch(url, {
           headers: {
             "Content-Type": "application/json",
