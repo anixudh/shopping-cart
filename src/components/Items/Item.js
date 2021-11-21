@@ -4,7 +4,7 @@ export const Item = ({ item }) => {
   //console.log(item.item.image);
   return (
     <div className="item" id={item.id}>
-      <Link to={`/shop/${item.id}`}>
+      <Link to={`/shopping-cart/shop/${item.id}`}>
         <img src={item.image} className="item-image" alt="item" />
         <hr />
 

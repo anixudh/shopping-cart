@@ -3,13 +3,13 @@ import "../styles/Nav.css";
 export const Nav = ({ cartLength }) => {
   return (
     <nav className="nav-bar">
-      <Link to="/">
+      <Link to="/shopping-cart">
         <div className="nav-link">Home</div>
       </Link>
-      <Link to="/shop">
+      <Link to="/shopping-cart/shop">
         <div className="nav-link">Shop</div>
       </Link>
-      <Link to="/cart">
+      <Link to="/shopping-cart/cart">
         <div className="nav-link nav-cart">
           Cart
           {cartLength === 0 ? (

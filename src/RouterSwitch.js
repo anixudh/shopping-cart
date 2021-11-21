@@ -91,6 +91,7 @@ const RouteSwitch = () => {
         <Route path="/" element={<App />} />
         <Route path="/shopping-cart" element={<App />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/shopping-cart/shop" element={<Shop />} />
         <Route
           path="/cart"
           element={
@@ -102,7 +103,22 @@ const RouteSwitch = () => {
             />
           }
         />
+        <Route
+          path="/shopping-cart/cart"
+          element={
+            <Cart
+              cartProp={cart}
+              removeItem={removeItem}
+              increaseQty={increaseQty}
+              decreaseQty={decreaseQty}
+            />
+          }
+        />
         <Route path="/shop/:id" element={<ItemPage addToCart={addToCart} />} />
+        <Route
+          path="/shopping-cart/shop/:id"
+          element={<ItemPage addToCart={addToCart} />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
