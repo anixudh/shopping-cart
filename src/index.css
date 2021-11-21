@@ -54,7 +54,7 @@ a.footer {
   text-align: center;
   width: 100%;
   position: relative;
-  top: -20px;
+  top: 20px;
   background-color: rgb(219, 219, 219);
   z-index: 2;
 }
@@ -64,8 +64,4 @@ a.footer {
     background-size: 1366px 900px;
     height: 100%;
   }
-
-  /*a.footer {
-    bottom: -50px;
-  }*/
 }
